@@ -92,7 +92,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 </html>
 ```
 
-* ee_api_js.js 的 GitHub 位置
+* ee_api_js.js 的 [GitHub](https://github.com/google/earthengine-api) 位置
 ![ee_api_js.js](./pic/ee_api_js.js.png)
 
 
