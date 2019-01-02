@@ -139,3 +139,5 @@ export PATH=$PATH:$NODE_HOME/bin:/usr/local/fabric/bin:/usr/local/go/bin:$GOPATH
 # 更新环境
 source /etc/profile
 ```
+
+

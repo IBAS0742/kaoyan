@@ -1,4 +1,8 @@
 
+## 下面第一部分，参照博文搭建是遇到的问题找不到解决方案，后面重新参照官方文档进行，请看第二部分
+
+> ## PART ONE
+ 
 ### 第一个问题
 
 #### 重现
@@ -35,3 +39,74 @@ Global Flags:
 > https://juejin.im/entry/5b7ba10e6fb9a01a12502314
 
 ![](./pic/error_1_solv.png)
+
+---
+
+> ## 以上问题，是参照一个博文搭建时遇到的，下面问题是参照官方文档搭建时遇到的
+
+> ## PART TWO
+
+>> #### 第一个问题(同时注意 node 和 npm 版本的官方要求)
+
+![](./pic/npm_install_1_loc.png)
+
+![](./pic/npm_install_1.jpg)
+
+>> ### 解决方案是，安装 g++，添加 --unsafe-perm
+
+```
+yum install gcc-c++
+cnpm install --unsafe-perm
+```
+
+![](./pic/npm_install_ok.png)
+
+>> ## 第二个问题
+
+![](./pic/npm_config_loc.png)
+
+![](./pic/npm_config_err.png)
+
+>> ### 这个问题，解决方案是将镜像地址修改为 淘宝镜像
+
+```bash
+npm config set registry https://registry.npm.taobao.org
+# 检查源地址
+npm config get registry
+```
+
+![](./pic/start_javascript_error_1.png)
+
+>> - 这个截图是因为我前面没有截取报错信息，临时在网上找的相似的错误信息
+
+>> ### 这个问题，我的解决方案是提前安装 x509@0.3.3
+
+```bash
+npm i -g x509@0.3.3 --unsafe-perm
+```
+
+![](./pic/start_javascript_error.png)
+
+>> - 如果避开了上面所有问题还是不行，提议做法如下
+
+```bash
+# 1. 重启虚拟机
+
+# 2. 进入到 /home/ibas/fabric-samples-1.4.0-rc2/first-network
+cd /home/ibas/fabric-samples-1.4.0-rc2/first-network
+./byfn.sh down
+docker rm -f $(docker ps -aq)
+docker rmi -f $(docker images | grep fabcar | awk '{print $3}')
+
+# 回到 fabcar
+cd ../fabcar
+rm -Rf javascript/node_modules
+./startFabric.sh javascript
+
+# 可以开启另一个终端窗口(查看 docker 日志)
+docker logs -f peer0.org1.example.com
+
+# 一直等到执行结束
+
+
+```
