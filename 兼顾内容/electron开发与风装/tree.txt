@@ -1,0 +1,213 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------- 项目使用说明 ----------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+一、从 electron 官网下载一个 2.0.5 以上版本的发布包解压，假设解压后文件夹名称为 ele_invoke
+二、将当前项目打包为一个 app.asar 放到 ele_invoke\resource 目录下
+三、自定义项目内容
+    基本使用方法是，仿照 config/SystemConfig/defaultConfig 编写若干个主要文件【编写方法参考 项目结构说明】
+    打包为【asar】或者直接将文件夹复制到 ele_invoke\resources 目录下
+    通过命令行执行 electron.exe asar包名/文件夹名称
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------- 项目文件结构说明 ------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+│  .eslintrc                                           代码规范配置文件
+│  package-lock.json                                   依赖锁
+│  package.json                                        依赖和配置
+│  tree.txt                                            文件说明
+│
+├─.idea                                                IDEA 配置参数（无关内容）
+│  │  minElectron_dev.iml
+│  │  misc.xml
+│  │  modules.xml
+│  │  workspace.xml
+│  │
+│  ├─dictionaries
+│  │      HUZENGYUN.xml
+│  │
+│  └─inspectionProfiles
+├─browser                                              浏览器相关代码
+│  │  index.js                                         继承全部为一个统一接口
+│  │
+│  ├─browserAction                                     浏览器事件（主要为 electron 原生的二次封装）
+│  │      browserAction.js                             浏览器事件（后期添加方法时可能会继续分文件夹）
+│  │      createWindow.js                              创建窗口（整个项目集成的核心，核心为窗口的渲染过程代码注入）
+│  │
+│  └─fetchEvenDear                                     前端事件的封装（主要为 nodejs 原生的二次风装）
+│      │  fetchEvenDear.js                             将events文件夹中的所有文件进行代码上的集合
+│      │
+│      └─events                                        所有 fetchEvenDear 中的事件，该文件夹中的内容『增删改』时，
+│                                                      foreEndApi/fetchEvent.js 需要做相应修改
+│              eventClass.js                           事件类（下面若干个类的父类，后期添加切片和收集日志的主要入口）
+│              dir.js                                  文件夹处理事件
+│              file.js                                 文件处理事件
+│              os.js                                   系统事件
+│              request.js                              网络请求事件
+│
+├─config                                               配置文件
+│  │  configClass.js                                   配置类（用于缓存及处理配置变化事件）
+│  │
+│  └─SystemConfig                                      应用配置（主要用于个性化）
+│      │  projectStructDescript.js                     项目结构描述构造（将一个已经定义好的结构同用于定义的结构进行对比，实现个性化）
+│      │                                               全部结构如下面的 defaultConfig 结构一致
+│      │
+│      └─defaultConfig                                 默认的完整项目结构
+│          │  winSetting.js                            窗口配置（配置 new electron.BrowserWindow 中的所有参数及默认加载页面）
+│          │
+│          └─invoke                                    窗口创建过程的注入
+│                  invoke_before.js                    窗口渲染前事件
+│                  invoking.js                         窗口渲染时事件（如果存在延迟事件，不能保证该部分事件优于 invoke_after.js 执完毕）
+│                  invoke_after.js                     窗口渲染后事件
+│
+├─foreEndApi                                           前端事件 api
+│      fetchEvent.js                                   定义前端事件的调用接口和全部接口的描述
+│
+├─install                                              msi 打包工具的默认安装文件内容（无关）
+│      app.js
+│
+├─src                                                  入口文件
+│      main.js                                         入口函数
+│
+└─test                                                 测试文件（注意这部分和 config/SystemConfig/defaultConfig 的结构是相似的）
+    │  winSetting.js                                   （见 config/SystemConfig/defaultConfig/winSetting）
+    │
+    └─invoke                                           （见 config/SystemConfig/defaultConfig/invoke.js）
+            invoking.js                                （见 config/SystemConfig/defaultConfig/invoking.js）
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------ 定义前端接口说明 -------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+如果为 browser/fetchEvenDear/fetchEvenDear.js 添加事件需要在 browser/fetchEvenDear/events 中进行添加定义类，大致编写规范如下（以 os.js 为例）
+const eventClass = require('./eventClass');
+
+class osClass extends eventClass {
+    //构造方法中定义方法默认名称，用于后期『切片』
+    constructor() {
+        super('osClass');
+        this.type = 'win32';
+    }
+
+    // 默认使用 this.returnMethod 处理数据的返回
+    get(cb) {
+        this.returnMethod(cb,{
+            data: this.type,
+            err: null
+        });
+    }
+}
+
+module.exports = osClass;
+
+另外需要在 browser/fetchEvenDear/fetchEvenDear.js 添加声明供调用，在 events 添加对象声明
+let events = {
+    dir: new (require('./events/dir'))(),
+    file: new (require('./events/file'))(),
+    os: new (require('./events/os'))(),
+    request: new (require('./events/request'))()
+};
+
+另外到 foreEndApi 中进行声明，在 fetchEventAction 添加接口声明
+os: { // os 同 browser/fetchEvenDear/fetchEvenDear.js 中的 events 的 os 同名
+    get: {  // 同 os.js 中对应的方法同名
+        event: 'os-get',
+        desc: '获取系统类型'
+    }
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------- 项目结构说明 ----------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+项目结构说明
+│      └─defaultConfig                                 默认的完整项目结构
+│          │  winSetting.js                            窗口配置（配置 new electron.BrowserWindow 中的所有参数及默认加载页面）
+│          │
+│          └─invoke                                    窗口创建过程的注入
+│                  invoke_before.js                    窗口渲染前事件
+│                  invoking.js                         窗口渲染时事件（如果存在延迟事件，不能保证该部分事件优于 invoke_after.js 执完毕）
+│                  invoke_after.js                     窗口渲染后事件
+│          │
+│          └─pages                                     这里可以是其他名称的放置任何内容的文件（例如静态的前端 H5 页面）
+│          │  index.html                               窗口配置（配置 new electron.BrowserWindow 中的所有参数及默认加载页面）
+winSetting.js 目前有两部分内容
+module.exports = {
+    window: {
+        // 这里为 new electron.BrowserWindow 的完整参数
+    },
+    baseUrl : // 默认加载的内容
+};
+使用时如下
+let win = new electron.BrowserWindow(winSetting.window);
+win.loadURL(winSetting.baseUrl);
+--------- 其中，如果 baseUrl 需要调用的是项目结构中的其他内容，可以编写为如下形式
+--------- baseUrl: "$/pages/index.html"
+
+invoke 文件中包含了 new electron.BrowserWindow 过程的前中后，大概过程为
+-- 伪代码
+invoke_before(function() {
+    win = new electron.BrowserWindow();
+    when(win.loaded) {
+        invoke_after();
+    }
+    invoking();
+});
+-------- 其中 invoke_before
+-------- invoke_before 接受三个参数 cb,electron,configs
+--------    不管其中是如何执行，都必须要对 cb() 进行非异步返回
+--------    即 return cb(); 必然要存在且非异步
+-------- invoking 接受两个参数 electron,configs
+--------    对返回值没有要求
+-------- invoke_after 接受三个参数 electron,configs,win
+--------    对返回值没有要求
+--------
+-------- 参数说明
+--------    electron    electron 对象，用于自定义另外的窗体时可用（但是当前缺失主线程的成功回调）
+--------    configs     配置文件，通过 get 方法获取系统配置参数
+--------                当前定义了   winSetting【与 winSetting.js 一致】
+--------                            projectInfo【dirname（main.js 的位置）、projectHash（当前项目的 hash）、projectDir（当前项目的具体位置】
+--------                            invoke【三个文件的具体位置】
+--------    win         创建好的 win 窗体句柄，可以用于打开【调试面板】、【url监听】、【下载管理】等
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------- 调试自定义项目方法 --------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+修改当前文件夹的 test 为自定义内容，
+    webstorm 调试方法
+        设置为 Node.js 运行方式
+        修改 Node interpreter 为 electron.md
+        修改 JavaScript file 为 src/main.js
+        修改 Application parameters 为 test
+        完成即可
+
+    vscode 调试方法
+        配置 electron 调试
+        添加 args 内容为 "args": [ "test" ]
+        运行即可
+
+    electron.md 可以通过以下方法获取
+        创建文件夹，编写 package.json 文件，内容为
+        {
+        	"dependencies": {
+        		"electron": "2.0.5"
+        	}
+        }
+        执行 npm i
+        在生成 node_modules 中便可以找到 .bin/electron.cmd
+        不需要移动或者复制，直接将当前文件的路径复制到 webstorm 的 Node interpreter 中
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
