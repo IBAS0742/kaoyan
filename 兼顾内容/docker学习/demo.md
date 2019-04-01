@@ -98,3 +98,7 @@ docker images
 :: 因为启动过，想着为 stop ，需要加 -f 进行强制删除
 docker rmi -f f52d3d88f030
 ```
+
+> 为什么不使用 ```ubuntu``` 直接构建，```ubuntu``` 才 ```173MB``` 大小，我们只需要安装 ```nodejs``` ```npm```，我是这么觉得，然后实际测试了一下
+
+![](./pic/demo_6.png)
