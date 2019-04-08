@@ -101,4 +101,44 @@ docker rmi -f f52d3d88f030
 
 > 为什么不使用 ```ubuntu``` 直接构建，```ubuntu``` 才 ```173MB``` 大小，我们只需要安装 ```nodejs``` ```npm```，我是这么觉得，然后实际测试了一下
 
+> 我使用的是 ```ant-design-pro```，可以在 ```github``` 上获取该项目，该项目默认带了一个 ```Dockerfile``` 文件
+
+```Dockerfile
+FROM circleci/node:latest-browsers
+
+WORKDIR /usr/src/app/
+USER root
+COPY package.json ./
+RUN yarn
+
+COPY ./ ./
+
+RUN npm run test:all
+
+CMD ["npm", "run", "build"]
+```
+
+> 我修改后的 ```Dockerfile``` 文件如下
+
+```Dockerfile
+# docker build -t ant:antp .
+FROM ubuntu
+
+RUN apt-get -y update
+RUN apt-get -y install nodejs
+RUN apt-get -y install npm
+RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
+RUN mkdir /home/aptp
+WORKDIR /home/antp
+USER root
+COPY package.json ./
+RUN cnpm i
+
+COPY ./ ./
+
+#RUN npm run test:all
+EXPOSE 8000
+CMD ["npm", "run", "start"]
+```
+
 ![](./pic/demo_6.png)
