@@ -1,0 +1,36 @@
+# 将 js 的二维数组转换为 matlab 的矩阵
+
+```javascript
+/**
+ * arrArr 要转换的二维数组
+ * nodata 缺失数据的替代内容（默认是0）
+ */
+function jsToMatri(arrArr,nodata) {
+    nodata = nodata || 0;
+    // 计算最长的数组
+    var maxLen = arrArr.map(_ => _.length).sort().reverse()[0];
+
+    var deta = ((nodata,maxLen,_) => {
+        if (_.length === maxLen) {
+            return '';
+        } else {
+            var ret = [];
+            for (var i = _.length;i < maxLen;i++) {
+                ret.push(nodata)
+            }
+            return ',' + ret.join(',')
+        }
+    }).bind(null,nodata,maxLen)
+    str = '[';
+    arrArr.forEach(_ => str += _.join(',') + deta(_) + ';...\n');
+    str += ']';
+    return str;
+}
+
+jsToMatri([[1,2,3],[4,5],[6]],1)
+/* "[1,2,3;...
+    4,5,1;...
+    6,1,1;...
+    ]"
+*/
+```
