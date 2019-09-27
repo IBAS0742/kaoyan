@@ -6,6 +6,8 @@
 
 > matlab 做法
 
+[围观我在哔哩哔哩的展示](https://www.bilibili.com/video/av69173072/)
+
 [引子](https://ww2.mathworks.cn/matlabcentral/answers/440861-extract-data-from-a-matrix-for-each-polygon-in-a-shape-file)
 
 ```matlab
