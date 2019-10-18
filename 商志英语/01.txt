@@ -365,6 +365,73 @@ bid n/v 出价；竞标
 broker n. 经纪人/中介
 real-estate broker 房地产经纪人
 ------------------------------------
-townsfolk 城镇的人
+city/town/village 城市/城镇/乡村
+citizen/townsfolk/villager(s) 市民/城镇的人/村民
+
+passerby 路人 -> passersby (复数)路人
 
 municipality 国际大都市 Beijing municipal government 北京市政府
+
+acceleration/slowdown 加速/减速
+
+lining n.边
+silver lining 希望
+Every cloud has its silver lining.
+
+elite/celebrity/influential 精英/名流/有影响力的人
+
+potential risks/buyer/customers 潜在的风险/客户/客户
+
+cheer v. 为什么欢呼，加油 cheer sb on 为某人欢呼
+
+would cheer for ≈ wouldn't mind 
+
+▲ a little + 比较级 翻译为稍微 ⇿ a great/good deal 或者 much 表示比较起来差很多
+far = a long way = way + 比较级 翻译为差很远
+老大 is a little taller than 老二
+
+distrusht n/v 不信任
+
+double-digit 两位数的收入
+
+stock market swings 股票市场波动 swings n/v = fluctuation n波动
+trade stock 交易股票
+
+⚪ingredient n成分/组成部分
+= component
+= element
+= part
+
+sustain v.使(在时间上)持久
+sustained boom 持久的繁荣
+sustainable development 可持续发展
+
+baby boom 婴儿潮/生育高峰期
+
+diner 吃货/美食家 ≠ dinner 晚饭
+
+Getting at table at Beijing Hotel. 在北京饭店吃上一顿。
+
+toast n/v. 干杯
+
+pessimistic 悲观的 optimistic 乐观的 optimism 乐观
+
+panic n/v 恐慌 panicked 恐慌的（注意多了个k）
+
+considerable benefits 巨大的利益
+
+precede v. 发生在 。。。 之前 A preceded B A发生在B之前
+
+enhance 提高
+
+horizontal/vertical 水平的/垂直的 horizontal & vertical 横向的和纵向的
+
+remedy n/v    \
+treatment n    \  医治
+cure n/v       /  疗法
+therapy n/v   /
+
+single = only 阅读有时候
+
+adventure n/v 冒险
+venture 三资企业/风险投资
