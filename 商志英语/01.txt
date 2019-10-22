@@ -139,11 +139,11 @@
 ▲2 并列结构 __ and __ / __ or __ / __,__ and __ / __,__ or __.
     读懂一个即可
 ▲3 not ... as many ... as ... 前者在数量上不如后者多
-    xxx doesn't have as many students as yyy does. xxx 学生数量不然 yyy 多
+    xxx doesn't have as many students as yyy does. xxx 学生数量不如 yyy 多
 ---------------------------------
 ▲1 对立对比关系
     __, but/whereas/while __. 前后是对比关系,对比的是同一种内容
-▲2  一下都可以翻译为客户顾客(写作多变化)
+▲2  以下都可以翻译为客户顾客(写作多变化)
     client
     customer
     shppper
@@ -320,7 +320,7 @@ remain optimistic 保持乐观
 seem mildly concerned 温和的关切
 not panic 没有恐慌
 
-long-term prpspect 长期的前景
+long-term prepspect 长期的前景
 long-term effect 长期效果
 long-term development 长期发展
 
