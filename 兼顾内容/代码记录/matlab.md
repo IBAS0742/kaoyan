@@ -24,10 +24,12 @@ end
 | pie([1,2,3,4]) | 绘制饼图 |
 | subplot(a,b,c) | 绘制多个子图 |
 | load | 加载 mat 文件 |
+| [tf,loc]=ismember(b,a) | 查找数字a是否包好在a内，tf是真值，loc是位置 |
 
 - subplot(a,b,c) a,b 表示将界面划分为 a*b 份，现在在第 c 份上绘制图像 
 
 - 以下是例子
+
 
 ```matlab
 % 关于 meshgrid
