@@ -1,0 +1,18 @@
+FROM rackspacedot/python37
+
+RUN \
+    pip install akshare \
+    cd /home \
+    mkdir dl \
+    cd dl \
+    # download node
+    wget https://npm.taobao.org/mirrors/node/v12.15.0/node-v12.15.0-linux-x64.tar.xz \
+    tar xvf node-v12.15.0-linux-x64.tar.xz \
+    mv node-v12.15.0-linux-x64 node 12 \
+    # install node
+    echo export NODE_HOME=/home/dl/node12 >> /etc/profile \
+    echo export export PATH=$NODE_HOME:$PATH >> /etc/profile \
+    source /etc/profile
+
+CMD [ "/bin/bash" ]
+
