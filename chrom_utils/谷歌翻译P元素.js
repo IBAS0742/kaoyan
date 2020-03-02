@@ -58,28 +58,39 @@
             alert("完成");
         }
     }
-    var btn = document.createElement('div')
-    btn.style.position = "absolute";
-    btn.style.top = "10px";
-    btn.style.right = "100px";
-    btn.style.zIndex = 10000;
-    btn.style.background = "black";
-    btn.style.color = "white";
-    btn.style.fontSize = "xx-large";
-    btn.style.fontWeight = "bold";
-    btn.style.cursor = "pointer";
-    document.body.appendChild(btn)
-    var btnClick = document.createElement('div');
-    var inp = document.createElement('input');
-    btnClick.onclick = function () {
-        $tranPElement(inp.value);
-    }
-    btnClick.innerText = "TranslateP";
-    btn.appendChild(btnClick);
-    btn.appendChild(inp);
-    inp.value = sessionStorage.getItem('_ibas_tran_');
-    inp.onchange = function () {
-        sessionStorage.setItem('_ibas_tran_', inp.value);
+    window.onload = function () {
+        let dom = jQuery(`<div style="position: absolute;top: 10px;right: 100px;font-weight: bold;
+        z-index: 10000000;background: black;font-size: xx-large;color: #fff;">
+        <div style="padding: 5px;">
+            <div id="_ibas_tran_exit_" style="display: inline-block;
+                cursor:pointer;background:darkturquoise;"
+                onclick="_tran_ToRemove()">X</div>
+            <div id="_ibas_tran_p_" style="display: inline-block;
+                cursor:pointer;background: darkorange;"
+                onclick="_tran_ToTran()">TranslateP</div>
+        </div>
+        <div style="overflow: hidden;">
+            <input id="_ibas_tran_inp_"
+                   style="width: 100%;background: #ceff95;color: #000;"
+                   type="text"
+                    onchange="_tran_changeSession()">
+        </div>
+    </div>`);
+        jQuery('body').append(dom);
+        window._tran_changeSession = function () {
+            sessionStorage.setItem('_ibas_tran_', document.getElementById('_ibas_tran_inp_').value);
+        }
+        window._tran_ToTran = function () {
+            $tranPElement(document.getElementById('_ibas_tran_inp_').value);
+        }
+        window._tran_ToRemove = (function (dom) {
+            dom.css({
+                display: "none"
+            });
+        }).bind(null, dom);
+        setTimeout(function () {
+            document.getElementById('_ibas_tran_inp_').value = sessionStorage.getItem('_ibas_tran_');
+        }, 500);
     }
     // Your code here...
 })();
