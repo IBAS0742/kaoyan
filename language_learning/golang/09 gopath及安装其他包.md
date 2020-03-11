@@ -29,5 +29,8 @@ go install github.com/gpmgo/gopm
 go env -w GO111MODULE="on"
 go env -w GOPROXY=https://goproxy.cn,direct
 :: 尝试下载一个插件
+:: 这个命令带v后不会下载到src目录下
 go get -v golang.org/x/tools/cmd/goimports
+:: 这个语句才能将包下载到 src 目录下
+go get golang.org/x/tools/cmd/goimports
 ```
