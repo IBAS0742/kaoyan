@@ -56,7 +56,7 @@ const delLastFile = (p) => {
 
 sloveArgs();
 config.toAppend ? 0 : delLastFile(config.outPath);
-
+// https://ladsweb.modaps.eosdis.nasa.gov/archive/allData/6/MOD09/2019/210/MOD09.A2019210.0200.006.2019212020245.hdf
 //https://gpm1.gesdisc.eosdis.nasa.gov/data/GPM_L3/GPM_3IMERGDF.06/2019/10/3B-DAY.MS.MRG.3IMERG.20191031-S000000-E235959.V06.nc4
 const cmd = (url) => {
     let filename = path.basename(url);
