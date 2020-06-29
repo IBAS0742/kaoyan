@@ -1,0 +1,13 @@
+(YouTube搬运)Discover NASA’s Near Real-Time Data using LANCE置顶评论
+
+Brief Description: This webinar provides an overview of NASA's Land Atmosphere Near real-time Capability for EOS (LANCE) system and available data, describes the difference between NRT data and standard quality data and shows you how to discover and access LANCE NRT data.
+
+Detailed Description: NASA is well known for providing high-quality satellite data for long-term scientific research, but application users, operational agencies, and even researchers often need data much sooner than routine science processing offers. Since 2009, NASA’s LANCE  has provided data and data products generally within three hours of satellite instrument observations. The more than 200 Near Real-Time (NRT) data products available through LANCE, along with the services and data distribution strategies developed by the LANCE team, have helped transform how Earth-observing data are used.
+
+As the LANCE celebrates its tenth anniversary, this webinar provides an opportunity to look back on its history, accomplishments, and provide users with an overview of the what is available.
+
+To learn more about NASA LANCE:
+https://www.youtube.com/redirect?redir_token=REkbpV_ImglPIbTnYE2FEp7CppB8MTU4Mzg5NjA3NUAxNTgzODA5Njc1&event=video_description&v=bMunftvU4r0&q=https%3A%2F%2Fearthdata.nasa.gov%2Fearth-observation-data%2Fnear-real-time
+
+
+

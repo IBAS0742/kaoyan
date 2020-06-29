@@ -1,0 +1,12 @@
+{
+    "extName": ".HDF",
+    "csvSplitChar": ",",
+    "csvColunm": 0,
+    "csvFromFirstLine": true,
+    "csvFileName": "C:\\Users\\HUZENGYUN\\Documents\\git\\文档\\kaoyan\\data_download\\nasa\\test.txt",
+    "outPath": "E:\\lins",
+    "toAppend": false,
+    "appkey": "A064EFD6-57A5-11EA-BEA6-FB455AF066A1",
+    "numWhat": "分为几个批次",
+    "num": 1
+}

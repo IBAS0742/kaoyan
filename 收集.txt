@@ -1,0 +1,95 @@
+idl 官方博客
+http://blog.sina.com.cn/s/blog_764b1e9d0102wi3t.html
+
+
+将文档转为txt
+https://github.com/sajari/docconv
+http://gnuwin32.sourceforge.net/packages/wv.htm <- 需要用到的工具
+
+hdf4 <- 只能是gdal能打开的hdf4格式，莫名其妙
+安装前需要先安装
+rtools 和 devtools
+rtoos => https://cran.r-project.org/bin/windows/Rtools/
+install.packages('devtools')
+library(devtools)
+https://github.com/diminutive/rgdalwinhdf4
+
+将hdf4转hdf5
+https://pjbartlein.github.io/REarthSysSci/hdf5_intro.html#convert-an-hdf4-file-to-hdf5
+
+modis 包 可以读写hdf4
+github.com/MatMatt/MODIS
+https://cran.r-project.org/web/packages/MODIS/MODIS.pdf
+
+hdf5 官方文档
+https://support.hdfgroup.org/HDF5/doc/RM/RM_H5D.html
+
+http://hdfeos.org/software/h4cflib.php
+
+mrt 教程
+https://blog.csdn.net/suiluochenghu/article/details/79648980
+
+图像任意四边形变换
+https://www.cnblogs.com/HopeGi/p/3428425.html
+
+hdf4
+http://luyutao.com/2016/03/23/csharp-read-hdf4.html
+
+go excelize 中文文档
+https://xuri.me/excelize/zh-hans/
+
+go 通过文件头判别文件类型
+https://www.cnblogs.com/enjong/articles/10741244.html
+
+python
+http://www.python3.vip/doc/tutorial/python/level2/excel/
+
+c# 调用系统api
+https://www.wlyc.cn/post-92.html
+
+go base64 和 []byte 转换
+https://gobyexample.com/base64-encoding
+
+hdf4 h5 互转工具
+https://support.hdfgroup.org/ftp/HDF5/h4toh5/bin/
+使用文档
+https://support.hdfgroup.org/ftp/HDF5/releases/tools/h4toh5/h4toh5-2.2.3/src/unpacked/doc/h4toh5lib_RM.html#Tools-CommandLineUtilities
+
+hdfview2.1.4 下载位置（登录）
+https://support.hdfgroup.org/products/java/release/download.html
+hdfview3.1.0 下载位置
+
+C# pictuerbox 平移代码
+https://code5.cn/so/c%23/1103256
+
+c# HDF4 封装库（该代码库有小bug，需要修复）
+https://github.com/configare/hispeed
+
+CALIPSO 官方代码
+http://hdfeos.org/zoo/index_openLaRC_Examples.php#CALIPSO
+其他
+http://hdfeos.org/forums/showthread.php?t=710&page=3
+nasa GitHub 代码
+https://github.com/NASA-DEVELOP/VOCAL
+和NASA GitHub 代码比较接近的 python 代码
+https://github.com/Newton-Climate/CALIPSO_scripts/blob/master/vfm_type.m
+
+python 安装 matplotlib 失败
+python -m pip install -U matplotlib
+
+R语言矩阵操作
+t(M) 转置m矩阵
+flip(M,'x') x方向翻转矩阵M
+
+安装 docker hadoop 
+https://www.jianshu.com/p/0966824997f5
+
+Scala Left and Right
+https://colobu.com/2015/06/11/Scala-Either-Left-And-Right/
+
+con
+https://www.cogeo.org/
+
+让腾讯会议说话和放视频带耳机时都有声音
+https://blog.csdn.net/x_1203/article/details/105439771
+https://jingyan.baidu.com/article/a24b33cd4dc68258ff002b0d.html
