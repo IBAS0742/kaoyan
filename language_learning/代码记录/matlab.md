@@ -25,6 +25,7 @@ end
 | subplot(a,b,c) | 绘制多个子图 |
 | load | 加载 mat 文件 |
 | [tf,loc]=ismember(b,a) | 查找数字a是否包好在a内，tf是真值，loc是位置 |
+| [x,y,button] = getinput(n) | 获取鼠标点击位置，n表示次数，button表示鼠标哪个键 |
 
 - subplot(a,b,c) a,b 表示将界面划分为 a*b 份，现在在第 c 份上绘制图像 
 
