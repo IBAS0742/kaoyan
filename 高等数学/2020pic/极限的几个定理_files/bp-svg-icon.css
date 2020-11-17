@@ -1,0 +1,216 @@
+.bp-svg-icon {
+  font-size: 40px;
+}
+
+.bp-svg-icon {
+  vertical-align: middle;
+  display: inline-block;
+  background-image: url("./bp-svg-icon.svg");
+  background-repeat: no-repeat;
+  background-size: 1em 23.225em;
+}
+
+.bp-svg-icon.size-14 {
+  font-size: 14px;
+}
+
+.bp-svg-icon.size-16 {
+  font-size: 16px;
+}
+
+.bp-svg-icon.size-18 {
+  font-size: 18px;
+}
+
+.bp-svg-icon.size-24 {
+  font-size: 24px;
+}
+
+.bp-svg-icon.collection-4 {
+  background-position: 0em 0em;
+  width: 1em;
+  height: 1em;
+}
+
+.bp-svg-icon.collection-icons {
+  background-position: 0em -1em;
+  width: 1em;
+  height: 1em;
+}
+
+.bp-svg-icon.comment {
+  background-position: 0em -2em;
+  width: 1em;
+  height: 1em;
+}
+
+.bp-svg-icon.comment-disable {
+  background-position: 0em -3em;
+  width: 1em;
+  height: 1em;
+}
+
+.bp-svg-icon.comment-hover {
+  background-position: 0em -4em;
+  width: 1em;
+  height: 1em;
+}
+
+.bp-svg-icon.error {
+  background-position: 0em -5em;
+  width: 1em;
+  height: 1em;
+}
+
+.bp-svg-icon.good-1 {
+  background-position: 0em -6em;
+  width: 1em;
+  height: 1em;
+}
+
+.bp-svg-icon.good-4 {
+  background-position: 0em -7em;
+  width: 1em;
+  height: 1em;
+}
+
+.bp-svg-icon.link {
+  background-position: 0em -8em;
+  width: 0.325em;
+  height: 0.375em;
+}
+
+.bp-svg-icon.lottery-btn {
+  background-position: 0em -8.375em;
+  width: 0.425em;
+  height: 0.4em;
+}
+
+.bp-svg-icon.radio-Selected {
+  background-position: 0em -8.775em;
+  width: 1em;
+  height: 1em;
+}
+
+.bp-svg-icon.radio-default {
+  background-position: 0em -9.775em;
+  width: 1em;
+  height: 1em;
+}
+
+.bp-svg-icon.renzheng-a {
+  background-position: 0em -10.775em;
+  width: 1em;
+  height: 1em;
+}
+
+.bp-svg-icon.renzheng-b {
+  background-position: 0em -11.775em;
+  width: 1em;
+  height: 1em;
+}
+
+.bp-svg-icon.star {
+  background-position: 0em -12.775em;
+  width: 0.375em;
+  height: 0.375em;
+}
+
+.bp-svg-icon.star-empty {
+  background-position: 0em -13.15em;
+  width: 0.375em;
+  height: 0.375em;
+}
+
+.bp-svg-icon.taobao-link {
+  background-position: 0em -13.525em;
+  width: 0.4125em;
+  height: 0.4125em;
+}
+
+.bp-svg-icon.topic-add {
+  background-position: 0em -13.95em;
+  width: 0.325em;
+  height: 0.325em;
+}
+
+.bp-svg-icon.topic-add-hover {
+  background-position: 0em -14.275em;
+  width: 0.325em;
+  height: 0.325em;
+}
+
+.bp-svg-icon.topic-cancel {
+  background-position: 0em -14.6em;
+  width: 0.325em;
+  height: 0.325em;
+}
+
+.bp-svg-icon.topic-cancel-hover {
+  background-position: 0em -14.925em;
+  width: 0.325em;
+  height: 0.325em;
+}
+
+.bp-svg-icon.topic-top {
+  background-position: 0em -15.25em;
+  width: 0.325em;
+  height: 0.325em;
+}
+
+.bp-svg-icon.topic-top-hover {
+  background-position: 0em -15.575em;
+  width: 0.325em;
+  height: 0.325em;
+}
+
+.bp-svg-icon.transmit {
+  background-position: 0em -15.9em;
+  width: 1em;
+  height: 1em;
+}
+
+.bp-svg-icon.transmit-disable {
+  background-position: 0em -16.9em;
+  width: 1em;
+  height: 1em;
+}
+
+.bp-svg-icon.transmit-hover {
+  background-position: 0em -17.9em;
+  width: 1em;
+  height: 1em;
+}
+
+.bp-svg-icon.vote-btn {
+  background-position: 0em -18.9em;
+  width: 0.3em;
+  height: 0.325em;
+}
+
+.bp-svg-icon.zan {
+  background-position: 0em -19.225em;
+  width: 1em;
+  height: 1em;
+}
+
+.bp-svg-icon.zan-a-hover {
+  background-position: 0em -20.225em;
+  width: 1em;
+  height: 1em;
+}
+
+.bp-svg-icon.zan-disable {
+  background-position: 0em -21.225em;
+  width: 1em;
+  height: 1em;
+}
+
+.bp-svg-icon.zan-hover {
+  background-position: 0em -22.225em;
+  width: 1em;
+  height: 1em;
+}
+
+
+

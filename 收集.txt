@@ -93,3 +93,6 @@ https://www.cogeo.org/
 让腾讯会议说话和放视频带耳机时都有声音
 https://blog.csdn.net/x_1203/article/details/105439771
 https://jingyan.baidu.com/article/a24b33cd4dc68258ff002b0d.html
+
+node http(s).request 乱码
+https://blog.csdn.net/fengxiaoxiao_1/article/details/72629577
